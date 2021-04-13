@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">App_AbarrotesVilla</string>
+
+    <!--Strings para el login-->
+    <string name="strUsuario">Usuario</string>
+    <string name="strContraseña">Contraseña</string>
+    <string name="strIngresar">Iniciar Sesión</string>
+    <string name="strNuevoUsuario">¿Deseas agregar un nuevo usuario?</string>
 </resources>
