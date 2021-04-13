@@ -53,11 +53,11 @@
 
             <TextView
                 android:id="@+id/btnUsuarioNuevo"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_gravity="center"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textColor="@android:color/holo_blue_dark"
                 android:clickable="true"
                 android:focusable="true"
