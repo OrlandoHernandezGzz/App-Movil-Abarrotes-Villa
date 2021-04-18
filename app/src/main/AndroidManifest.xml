@@ -8,9 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.App_AbarrotesVilla">
-        <activity android:name=".RegistrarActivity" android:label="@string/str_Registrar"></activity>
-        <activity android:name=".Login" android:label="@string/str_login"></activity>
+        android:theme="@style/Theme.App_AbarrotesVilla"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ProductosActivity"
+            android:label="@string/str_Almacén"/>
+        <activity
+            android:name=".MenuPrincipal"
+            android:label="@string/str_MenuPrincipal" />
+        <activity
+            android:name=".RegistrarActivity"
+            android:label="@string/str_Registrar" />
+        <activity
+            android:name=".Login"
+            android:label="@string/str_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,5 +29,8 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

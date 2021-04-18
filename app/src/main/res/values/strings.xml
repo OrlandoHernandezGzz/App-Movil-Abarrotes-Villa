@@ -1,8 +1,10 @@
 <resources>
     <!--Nombres de cada action bar de las actividades-->
-    <string name="app_name">App_AbarrotesVilla</string>
+    <string name="app_name">AbarrotesVilla</string>
     <string name="str_login">Inicio de Sesión</string>
     <string name="str_Registrar">Registro de Usuarios</string>
+    <string name="str_MenuPrincipal">Menú Principal</string>
+    <string name="str_Almacén">Almacén de Productos</string>
 
     <!--Strings para el login-->
     <string name="strUsuario">Usuario</string>
@@ -12,8 +14,24 @@
 
     <!--Strings para el la activity registrar-->
     <string name="strNombre">Nombre</string>
-    <string name="strApellido">Apellido</string>
+    <string name="strApellido">Apellidos</string>
     <string name="strTelefono">Télefono</string>
     <string name="strRegistrar">Registrar</string>
     <string name="str_confirmarContra">Confirmar Contraseña</string>
+
+    <!--Strings para el menú overflow de nuestra action bar.-->
+    <string name="str_perfil">Ver perfil</string>
+    <string name="str_cerrar">Cerrar Sesión</string>
+    <string name="str_menu">Menú principal</string>
+    <string name="str_prod">Almacén</string>
+    <string name="str_venta">Punto de venta</string>
+
+    <!--Strings para la activity ProductosActivity (Almacén)-->
+    <string name="str_codigoProd">Código del producto</string>
+    <string name="str_nomProd">Nombre del producto</string>
+    <string name="str_descrip">Descripción del producto</string>
+    <string name="str_cantidad"># Cantidad</string>
+    <string name="str_cantReserva"># Cant. reserva</string>
+    <string name="str_precioCompra">Precio compra</string>
+    <string name="str_precioVenta">Precio venta</string>
 </resources>
