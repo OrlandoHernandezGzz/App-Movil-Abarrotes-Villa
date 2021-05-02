@@ -16,8 +16,10 @@
     <string name="strNombre">Nombre</string>
     <string name="strApellido">Apellidos</string>
     <string name="strTelefono">Télefono</string>
+    <string name="strTipoUser">Tipo de Usuario</string>
     <string name="strRegistrar">Registrar</string>
     <string name="str_confirmarContra">Confirmar Contraseña</string>
+    <string name="str_regresar">Vuelve al inicio de sesión</string>
 
     <!--Strings para el menú overflow de nuestra action bar.-->
     <string name="str_perfil">Ver perfil</string>

@@ -60,5 +60,11 @@ public class MenuPrincipal extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    } //FIN DEL METODO SELECCIONAR OPCION DE ITEM
+
+    //Método para el botón regresar.
+    @Override
+    public void onBackPressed(){
+
     }
 }

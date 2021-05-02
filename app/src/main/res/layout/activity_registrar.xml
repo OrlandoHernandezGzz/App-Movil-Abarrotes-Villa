@@ -58,13 +58,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tipo de Usuario"
+        android:hint="@string/strTipoUser"
         android:layout_marginTop="10dp">
 
         <AutoCompleteTextView
             android:id="@+id/cboTipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:labelFor="@id/cboTipo"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -111,6 +111,12 @@ public class Login extends AppCompatActivity {
         RequestQueue requestqueue = Volley.newRequestQueue(this);
         //Ayuda a procesar las peticiones hechas de nuestra app.
         requestqueue.add(stringrequest);
-    }
 
+    } //FIN DEL METODO VALIDAR USUARIO.
+
+    //Método para el botón regresar.
+    @Override
+    public void onBackPressed(){
+
+    }
 }

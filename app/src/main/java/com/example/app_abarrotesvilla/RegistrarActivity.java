@@ -1,8 +1,8 @@
 package com.example.app_abarrotesvilla;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -86,7 +86,7 @@ public class RegistrarActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Servidor fuera de servicio", Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -105,5 +105,14 @@ public class RegistrarActivity extends AppCompatActivity {
         RequestQueue requestqueue = Volley.newRequestQueue(this);
         //Ayuda a procesar las peticiones hechas de nuestra app.
         requestqueue.add(stringrequest);
+    }// FIN DEL METODO REGISTRAR.
+
+
+    //Método para el botón regresar.
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        startActivity(intent);
+        finish();
     }
 }
