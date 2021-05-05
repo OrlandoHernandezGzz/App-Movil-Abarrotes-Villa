@@ -17,6 +17,9 @@
             android:name=".MenuPrincipal"
             android:label="@string/str_MenuPrincipal" />
         <activity
+            android:name=".MenuPrincipalTipoUser"
+            android:label="@string/str_MenuPrincipal"/>
+        <activity
             android:name=".RegistrarActivity"
             android:label="@string/str_Registrar" />
         <activity
