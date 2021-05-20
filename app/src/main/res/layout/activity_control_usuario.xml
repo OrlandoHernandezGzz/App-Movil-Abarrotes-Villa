@@ -5,190 +5,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wp_registrar"
-    tools:context=".ProductosActivity">
+    tools:context=".ControlUsuario">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/codigo"
+        android:id="@+id/codigo_user"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/str_codigoProd">
+        android:hint="@string/str_txtCodigoUser">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtCodigo"
+            android:id="@+id/txtCodigoUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-        android:id="@+id/btnScanner"
+        android:id="@+id/btnBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/scanner" />
+        app:srcCompat="@drawable/buscar_user" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/producto"
+        android:id="@+id/nombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="90dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:hint="@string/str_nomProd">
+        android:layout_marginBottom="20dp"
+        android:hint="@string/strNombre">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtProducto"
+            android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/descripcion"
+        android:id="@+id/apellidos"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:hint="@string/str_descrip">
+        android:hint="@string/strApellido">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtDescripcion"
+            android:id="@+id/txtApellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cantidad"
+        android:id="@+id/telefono"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="229dp"
-        android:layout_marginBottom="20dp"
-        android:hint="@string/str_cantidad">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtCantidad"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cantidadReserva"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="230dp"
         android:layout_marginEnd="20dp"
-        android:hint="@string/str_cantReserva">
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="@string/strTelefono">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtCantReserva"
-            android:layout_width="150dp"
+            android:id="@+id/txtTelefono"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/precioCompra"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
+        android:id="@+id/tipo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="300dp"
-        android:hint="@string/str_precioCompra">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPrecioCompra"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/precioVenta"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="300dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:hint="@string/str_precioVenta">
+        android:layout_marginBottom="20dp"
+        android:hint="@string/strTipoUser">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPrecioVenta"
-            android:layout_width="150dp"
+        <AutoCompleteTextView
+            android:id="@+id/cboTipo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="none"
+            android:labelFor="@id/cboTipo" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageButton
-        android:id="@+id/btnGuardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="440dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/guardar" />
-
-    <ImageButton
-        android:id="@+id/btnCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="440dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/cancelar" />
 
     <ImageButton
         android:id="@+id/btnModificar"
@@ -203,6 +143,17 @@
         app:srcCompat="@drawable/editar" />
 
     <ImageButton
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/cancelar" />
+
+    <ImageButton
         android:id="@+id/btnEliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -213,6 +164,5 @@
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/eliminar" />
-
 
 </RelativeLayout>

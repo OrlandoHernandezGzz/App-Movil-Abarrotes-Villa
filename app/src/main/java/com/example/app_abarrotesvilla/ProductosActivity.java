@@ -32,7 +32,7 @@ public class ProductosActivity extends AppCompatActivity {
     //Declaramos los atributos.
     private TextInputEditText txtCodigo, txtProducto, txtDescripcion, txtCantidad, txtCantReserva;
     private TextInputEditText txtPrecioCompra, txtPrecioVenta;
-    private ImageButton btnScanner, btnGuardar, btnModificar, btnEliminar;
+    private ImageButton btnScanner, btnGuardar, btnModificar, btnEliminar, btnCancelar;
     private String codigo, producto, descripcion, cantidad, cantidadReserva, precioCompra, precioVenta;
     JsonObjectRequest jsonObjectRequest;
     RequestQueue requestqueue;
@@ -60,10 +60,12 @@ public class ProductosActivity extends AppCompatActivity {
         btnGuardar = findViewById(R.id.btnGuardar);
         btnModificar = findViewById(R.id.btnModificar);
         btnEliminar = findViewById(R.id.btnEliminar);
+        btnCancelar = findViewById(R.id.btnCancelar);
 
         //Hacemos invisibles nuestros botones para que el usuario no modifique o borre hasta que se haga la consulta
         btnModificar.setVisibility(View.INVISIBLE);
         btnEliminar.setVisibility(View.INVISIBLE);
+        btnCancelar.setVisibility(View.INVISIBLE);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -93,6 +95,7 @@ public class ProductosActivity extends AppCompatActivity {
                     //Cuando ya este hecha la consulta ahora si activa los botones de eliminar y modificar.
                     btnModificar.setVisibility(View.VISIBLE);
                     btnEliminar.setVisibility(View.VISIBLE);
+                    btnCancelar.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -140,9 +143,23 @@ public class ProductosActivity extends AppCompatActivity {
                 eliminarProducto();
             }
         });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Método del boton cancelar
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtCodigo.setEnabled(true);
+                btnGuardar.setVisibility(View.VISIBLE);
+                btnModificar.setVisibility(View.INVISIBLE);
+                btnEliminar.setVisibility(View.INVISIBLE);
+                btnCancelar.setVisibility(View.INVISIBLE);
+                limpiar();
+            }
+        });
+
+
 
     } //FIN DEL MÉTODO ONCREATE().
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -235,9 +252,9 @@ public class ProductosActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No se logro la consulta.", Toast.LENGTH_SHORT).show();
                 txtCodigo.setEnabled(true);
                 btnGuardar.setVisibility(View.VISIBLE);
-                btnGuardar.setVisibility(View.VISIBLE);
                 btnModificar.setVisibility(View.INVISIBLE);
                 btnEliminar.setVisibility(View.INVISIBLE);
+                btnCancelar.setVisibility(View.INVISIBLE);
                 limpiar();
             }
         });
@@ -258,20 +275,33 @@ public class ProductosActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 //Si el webService nos regresa la palabra se actualizo quiere decir que se ha registrado con exito.
                 if (response.trim().equalsIgnoreCase("SeActualizo")){
+                    Toast.makeText(getApplicationContext(),"Se ha Actualizado con exito",Toast.LENGTH_SHORT).show();
                     txtCodigo.setEnabled(true);
                     limpiar();
-                    Toast.makeText(getApplicationContext(),"Se ha Actualizado con exito",Toast.LENGTH_SHORT).show();
                     btnGuardar.setVisibility(View.VISIBLE);
                     btnModificar.setVisibility(View.INVISIBLE);
                     btnEliminar.setVisibility(View.INVISIBLE);
+                    btnCancelar.setVisibility(View.INVISIBLE);
                 }else{
                     Toast.makeText(getApplicationContext(),"No se ha Actualizado ",Toast.LENGTH_SHORT).show();
+                    txtCodigo.setEnabled(true);
+                    limpiar();
+                    btnGuardar.setVisibility(View.VISIBLE);
+                    btnModificar.setVisibility(View.INVISIBLE);
+                    btnEliminar.setVisibility(View.INVISIBLE);
+                    btnCancelar.setVisibility(View.INVISIBLE);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), "No se logro actualizar", Toast.LENGTH_SHORT).show();
+                txtCodigo.setEnabled(true);
+                limpiar();
+                btnGuardar.setVisibility(View.VISIBLE);
+                btnModificar.setVisibility(View.INVISIBLE);
+                btnEliminar.setVisibility(View.INVISIBLE);
+                btnCancelar.setVisibility(View.INVISIBLE);
             }
         }){
             @Override
@@ -301,24 +331,43 @@ public class ProductosActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(response.trim().equalsIgnoreCase("elimina")){
+                    Toast.makeText(getApplicationContext(),"Se ha Eliminado con exito",Toast.LENGTH_SHORT).show();
                     txtCodigo.setEnabled(true);
                     limpiar();
-                    Toast.makeText(getApplicationContext(),"Se ha Eliminado con exito",Toast.LENGTH_SHORT).show();
                     btnGuardar.setVisibility(View.VISIBLE);
                     btnModificar.setVisibility(View.INVISIBLE);
                     btnEliminar.setVisibility(View.INVISIBLE);
+                    btnCancelar.setVisibility(View.INVISIBLE);
 
                 } else if(response.trim().equalsIgnoreCase("noElimina")){
-                     Toast.makeText(getApplicationContext(),"No se ha Eliminado ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"No se ha Eliminado ",Toast.LENGTH_SHORT).show();
+                    txtCodigo.setEnabled(true);
+                    limpiar();
+                    btnGuardar.setVisibility(View.VISIBLE);
+                    btnModificar.setVisibility(View.INVISIBLE);
+                    btnEliminar.setVisibility(View.INVISIBLE);
+                    btnCancelar.setVisibility(View.INVISIBLE);
 
                 } else{
                     Toast.makeText(getApplicationContext(),"No se encuentra la persona ",Toast.LENGTH_SHORT).show();
+                    txtCodigo.setEnabled(true);
+                    limpiar();
+                    btnGuardar.setVisibility(View.VISIBLE);
+                    btnModificar.setVisibility(View.INVISIBLE);
+                    btnEliminar.setVisibility(View.INVISIBLE);
+                    btnCancelar.setVisibility(View.INVISIBLE);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), "No se logro eliminar", Toast.LENGTH_SHORT).show();
+                txtCodigo.setEnabled(true);
+                limpiar();
+                btnGuardar.setVisibility(View.VISIBLE);
+                btnModificar.setVisibility(View.INVISIBLE);
+                btnEliminar.setVisibility(View.INVISIBLE);
+                btnCancelar.setVisibility(View.INVISIBLE);
             }
         });
 

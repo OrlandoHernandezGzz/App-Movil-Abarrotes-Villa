@@ -5,6 +5,9 @@
     <string name="str_Registrar">Registro de Usuarios</string>
     <string name="str_MenuPrincipal">Menú Principal</string>
     <string name="str_Almacén">Almacén de Productos</string>
+    <string name="str_puntoVenta">Punto de venta</string>
+    <string name="str_controlUser">Control de Usuarios</string>
+    <string name="str_perfilUser">Perfil de Usuario</string>
 
     <!--Strings para el login-->
     <string name="strUsuario">Usuario</string>
@@ -27,6 +30,8 @@
     <string name="str_menu">Menú principal</string>
     <string name="str_prod">Almacén</string>
     <string name="str_venta">Punto de venta</string>
+    <string name="str_cobrarVenta">Cobrar Venta</string>
+    <string name="str_nuevaVenta">Nueva Venta</string>
 
     <!--Strings para la activity ProductosActivity (Almacén)-->
     <string name="str_codigoProd">Código del producto</string>
@@ -36,4 +41,23 @@
     <string name="str_cantReserva"># Cant. reserva</string>
     <string name="str_precioCompra">Precio compra</string>
     <string name="str_precioVenta">Precio venta</string>
+
+    <!--Strings para la actiivty punto de venta-->
+    <string name="str_nombreProd">Producto: </string>
+    <string name="str_cant">Cantidad </string>
+    <string name="rv_cantidad">Cantidad:  </string>
+    <string name="str_precio">Precio: $</string>
+    <string name="str_subtotal">Subtotal: $</string>
+    <string name="str_total">Total: $</string>
+    <string name="str_pago">Digite la cantidad de pago</string>
+    <string name="str_cambio">Cambio: </string>
+
+    <!--Strings para la activity control de usuarios-->
+    <string name="str_txtCodigoUser">Codigo de usuario</string>
+
+    <!--Strings para la activity perfil de usuario-->
+    <string name="str_ModificarDatos">Modificar datos</string>
+    <string name="str_Guardar">Guardar</string>
+    <string name="str_id">Id</string>
+
 </resources>

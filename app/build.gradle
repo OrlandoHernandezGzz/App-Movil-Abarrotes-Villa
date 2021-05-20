@@ -39,5 +39,8 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.0'
     //Librería Scanner.
     implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
+    //Librería de nustra recycler view.
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
 
 }

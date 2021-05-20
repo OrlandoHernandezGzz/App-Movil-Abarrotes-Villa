@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:id="@+id/UsuarioEm"
+        android:id="@+id/pago"
         android:hint="@string/strUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtUsuarioEm"
+            android:id="@+id/txtPago"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"/>

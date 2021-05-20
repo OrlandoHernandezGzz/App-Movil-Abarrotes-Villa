@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MenuPrincipalTipoUser extends AppCompatActivity {
     //Declaramos nuestros atributos
     private ImageButton btnVenta;
+    String nombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,15 @@ public class MenuPrincipalTipoUser extends AppCompatActivity {
         //Puente de nuestros atributos a los componentes del xml.
         btnVenta = findViewById(R.id.btnVenta);
 
+        nombreUsuario = getIntent().getStringExtra("usuario");
+
         //Métodos de acciones de los botones.
         btnVenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getApplicationContext(), PuntoVenta.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -47,7 +52,10 @@ public class MenuPrincipalTipoUser extends AppCompatActivity {
         int item_seleccionado = item.getItemId();
 
         if(item_seleccionado == R.id.opPerfil) {
-
+            Intent intent = new Intent(getApplicationContext(), PerfilUsuario.class);
+            intent.putExtra("usuario", nombreUsuario);
+            startActivity(intent);
+            finish();
         } else if(item_seleccionado == R.id.opCerrar){
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);

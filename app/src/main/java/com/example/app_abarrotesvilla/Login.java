@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog alert;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,13 +89,16 @@ public class Login extends AppCompatActivity {
 
                         JSONObject obResultado = new JSONObject(response);
                         tipoUsuario = obResultado.get("us_tipo").toString();
+                        usuario = txtUsuario.getText().toString();
 
                         if(tipoUsuario.equalsIgnoreCase("Administrador")){
                             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
+                            intent.putExtra("usuario", usuario);
                             startActivity(intent);
                             finish();
                         } else{
                             Intent intent = new Intent(getApplicationContext(), MenuPrincipalTipoUser.class);
+                            intent.putExtra("usuario", usuario);
                             startActivity(intent);
                             finish();
                         }
@@ -137,7 +141,7 @@ public class Login extends AppCompatActivity {
     public void loginEmergente(){
         dialogBuilder = new AlertDialog.Builder(this);
         View login_view = getLayoutInflater().inflate(R.layout.login_emergente, null);
-        txtUsuarioEm = login_view.findViewById(R.id.txtUsuarioEm);
+        txtUsuarioEm = login_view.findViewById(R.id.txtPago);
         txtPasswordEm = login_view.findViewById(R.id.txtPasswordEm);
         btnIngresarEm = login_view.findViewById(R.id.btnIngresarEm);
 

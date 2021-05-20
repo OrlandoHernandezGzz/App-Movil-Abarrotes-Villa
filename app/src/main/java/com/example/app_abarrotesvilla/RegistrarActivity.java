@@ -81,11 +81,13 @@ public class RegistrarActivity extends AppCompatActivity {
         StringRequest stringrequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                limpiar();
                 Toast.makeText(getApplicationContext(), "Registro Exitoso!", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                limpiar();
                 Toast.makeText(getApplicationContext(), "Servidor fuera de servicio", Toast.LENGTH_SHORT).show();
             }
         }){
@@ -107,6 +109,15 @@ public class RegistrarActivity extends AppCompatActivity {
         requestqueue.add(stringrequest);
     }// FIN DEL METODO REGISTRAR.
 
+    //Método limpiar.
+    public void limpiar(){
+        txtNombre.setText("");
+        txtApellidos.setText("");
+        txtTelefono.setText("");
+        cboTipo.setText("");
+        txtUsuario.setText("");
+        txtPassword.setText("");
+    }
 
     //Método para el botón regresar.
     @Override

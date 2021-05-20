@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 public class MenuPrincipal extends AppCompatActivity {
     //Declaramos nuestros atributos
     private ImageButton btnAlmacen, btnVenta, btnControlUsuarios;
+    String nombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,31 @@ public class MenuPrincipal extends AppCompatActivity {
         btnVenta = findViewById(R.id.btnVenta);
         btnControlUsuarios = findViewById(R.id.btnControlUsuarios);
 
+        nombreUsuario = getIntent().getStringExtra("usuario");
 
         //Métodos de acciones de los botones.
         btnAlmacen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ProductosActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnVenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PuntoVenta.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnControlUsuarios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ControlUsuario.class);
                 startActivity(intent);
                 finish();
             }
@@ -52,6 +72,10 @@ public class MenuPrincipal extends AppCompatActivity {
         int item_seleccionado = item.getItemId();
 
         if(item_seleccionado == R.id.opPerfil) {
+            Intent intent = new Intent(getApplicationContext(), PerfilUsuario.class);
+            intent.putExtra("usuario", nombreUsuario);
+            startActivity(intent);
+            finish();
 
         } else if(item_seleccionado == R.id.opCerrar){
             Intent intent = new Intent(getApplicationContext(), Login.class);
