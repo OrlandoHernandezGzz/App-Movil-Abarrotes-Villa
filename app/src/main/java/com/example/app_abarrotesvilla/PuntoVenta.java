@@ -3,6 +3,7 @@ package com.example.app_abarrotesvilla;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -51,9 +52,9 @@ public class PuntoVenta extends AppCompatActivity {
     private TextInputEditText txtPagoEm;
     private MaterialButton btnCobrarEm;
     private TextView tvCambioEm;
-    private String pagoEm;
+    private String pagoEm, strRestaCantProd;
     private int restaCantProd;
-
+    private String channelID = "channelID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +159,7 @@ public class PuntoVenta extends AppCompatActivity {
 
                 if(!cantidad.isEmpty()){
                     //El método para restar la cantidad de almacen.
-                    //modificarCantidadProd();
+                    modificarCantidadProd();
                     llenarLista();
                     limpiar();
                     btnGuardar.setVisibility(View.INVISIBLE);
@@ -214,6 +215,7 @@ public class PuntoVenta extends AppCompatActivity {
                 try {
                     //obtenemos nuestro objeto json en el indice 0, osea el id del producto.
                     jsonobject = json.getJSONObject(0);
+                    cantidadDB = jsonobject.optString("cantidad_prod");
                     //Una vez que detecta el id, establece los objetos de la base de datos hacía nuestros campos de texto.
                     tvProducto.setText(jsonobject.optString("nombre_prod"));
                     tvPrecio.setText(jsonobject.optString("precioven_prod"));
@@ -239,18 +241,23 @@ public class PuntoVenta extends AppCompatActivity {
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /*
+
     //Método para hacer la modificación de nuestros productos.
     private void modificarCantidadProd(){
         //Cadena de texto que se manda nuestro URL de servicio modificar.
         String URL = "http://192.168.1.70/AbarrotesVilla/modifiCantProd_service.php?";
+        //La resta que se hace cuando se compra un producto.
+        restaCantProd = Integer.parseInt(cantidadDB) - Integer.parseInt(txtCantidad.getText().toString());
+        strRestaCantProd = String.valueOf(restaCantProd);
+        //Obtenemos nuestro valor de la caja de texto.
+        codigo = txtCodigo.getText().toString();
 
         StringRequest stringrequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //Si el webService nos regresa la palabra se actualizo quiere decir que se ha registrado con exito.
                 if (response.trim().equalsIgnoreCase("SeActualizo")){
-                    Toast.makeText(getApplicationContext(),"Se ha Actualizado con exito",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Quedan: " + restaCantProd + " elementos",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(),"No se ha Actualizado ",Toast.LENGTH_SHORT).show();
                 }
@@ -261,19 +268,18 @@ public class PuntoVenta extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No se logro actualizar", Toast.LENGTH_SHORT).show();
             }
         }){
-            @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> parametros = new HashMap<>();
-                parametros.put("codigo", txtCodigo.getText().toString());
-                parametros.put("cantidad", txtCantidad.getText().toString());
+                parametros.put("codigo", codigo);
+                parametros.put("cantidad", strRestaCantProd);
                 return parametros;
             }
         };
 
         requestqueue = Volley.newRequestQueue(this);
         requestqueue.add(stringrequest);
-    } */
+    }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -350,6 +356,14 @@ public class PuntoVenta extends AppCompatActivity {
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* //Método para crear notificaciones.
+    public void notificacion(){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID);
+        builder.setSmallIcon(R.drawable.logo_villa);
+        builder.setContentTitle("Advertencia de la cantidad de productos!");
+        builder.setContentText("")
+    } */
+
     //Método para el botón regresar.
     @Override
     public void onBackPressed(){
