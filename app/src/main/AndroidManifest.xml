@@ -12,8 +12,11 @@
         android:theme="@style/Theme.App_AbarrotesVilla"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Proveedores"
+            android:label="Proveedores"/>
+        <activity
             android:name=".PerfilUsuario"
-            android:label="@string/str_perfilUser"/>
+            android:label="@string/str_perfilUser" />
         <activity
             android:name=".ControlUsuario"
             android:label="@string/str_controlUser" />
@@ -43,8 +46,8 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

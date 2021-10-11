@@ -60,4 +60,9 @@
     <string name="str_Guardar">Guardar</string>
     <string name="str_id">Id</string>
 
+    <!--Strings para la activity proveedores-->
+    <string name="str_proveedor">Selecciona el Proveedor</string>
+    <string name="str_mensaje">Escriba el mensaje...</string>
+    <string name="str_enviar">Enviar</string>
+
 </resources>

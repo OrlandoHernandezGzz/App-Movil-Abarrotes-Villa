@@ -203,7 +203,7 @@ public class PuntoVenta extends AppCompatActivity {
     //Método para mostrar los datos.
     private void consultarProducto(){
         //Variable donde esta nuestra URL del service asignandole el codigo a buscar.
-        String URL = "http://192.168.1.70/AbarrotesVilla/consultarProd_service.php?codigo=" + txtCodigo.getText().toString();
+        String URL = "http://192.168.1.73/AbarrotesVilla/consultarProd_service.php?codigo=" + txtCodigo.getText().toString();
         //
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
@@ -245,7 +245,7 @@ public class PuntoVenta extends AppCompatActivity {
     //Método para hacer la modificación de nuestros productos.
     private void modificarCantidadProd(){
         //Cadena de texto que se manda nuestro URL de servicio modificar.
-        String URL = "http://192.168.1.70/AbarrotesVilla/modifiCantProd_service.php?";
+        String URL = "http://192.168.1.73/AbarrotesVilla/modifiCantProd_service.php?";
         //La resta que se hace cuando se compra un producto.
         restaCantProd = Integer.parseInt(cantidadDB) - Integer.parseInt(txtCantidad.getText().toString());
         strRestaCantProd = String.valueOf(restaCantProd);

@@ -88,7 +88,7 @@ public class PerfilUsuario extends AppCompatActivity {
     //Método para buscar un usuario.
     private void llamarPerfil(){
         //Variable donde esta nuestra URL del service asignandole el codigo a buscar.
-        String URL = "http://192.168.1.70/AbarrotesVilla/perfilUser_service.php?usuario=" + nombreUsuario;
+        String URL = "http://192.168.1.73/AbarrotesVilla/perfilUser_service.php?usuario=" + nombreUsuario;
         //
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
@@ -123,7 +123,7 @@ public class PerfilUsuario extends AppCompatActivity {
     //Método para modificar el perfil del usuario.
     private void modificarPerfil(){
         //Cadena de texto que se manda nuestro URL de servicio modificar.
-        String URL = "http://192.168.1.70/AbarrotesVilla/modifPerfilUser_service.php?";
+        String URL = "http://192.168.1.73/AbarrotesVilla/modifPerfilUser_service.php?";
 
         StringRequest stringrequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override

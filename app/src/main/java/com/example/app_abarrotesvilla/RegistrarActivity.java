@@ -68,7 +68,7 @@ public class RegistrarActivity extends AppCompatActivity {
 
                 if(!nombre.isEmpty() && !apellidos.isEmpty() && !telefono.isEmpty() && !usuario.isEmpty() && !password.isEmpty()
                     && !tipo.isEmpty()){
-                    registrar("http://192.168.1.70/AbarrotesVilla/registro_service.php");
+                    registrar("http://192.168.1.73/AbarrotesVilla/registro_service.php");
                 } else{
                     Toast.makeText(RegistrarActivity.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }

@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
                 password = txtPassword.getText().toString();
 
                 if(!usuario.isEmpty() && !password.isEmpty()){
-                    login_service("http://192.168.1.70/AbarrotesVilla/login_service.php");
+                    login_service("http://192.168.1.73/AbarrotesVilla/login_service.php");
                 } else{
                     Toast.makeText(Login.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }
@@ -156,7 +156,7 @@ public class Login extends AppCompatActivity {
                 passwordEm = txtPasswordEm.getText().toString();
 
                 if(!usuarioEm.isEmpty() && !passwordEm.isEmpty()){
-                    login_serviceEmergente("http://192.168.1.70/AbarrotesVilla/login_service.php");
+                    login_serviceEmergente("http://192.168.1.73/AbarrotesVilla/login_service.php");
                 } else{
                     Toast.makeText(Login.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }
