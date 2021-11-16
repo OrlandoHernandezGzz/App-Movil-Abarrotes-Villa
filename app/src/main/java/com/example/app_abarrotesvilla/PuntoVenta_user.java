@@ -1,11 +1,5 @@
 package com.example.app_abarrotesvilla;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,7 +30,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PuntoVenta extends AppCompatActivity {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class PuntoVenta_user extends AppCompatActivity {
     //Declaramos nuestros atributos.
     private ArrayList<ListaVentas> listVentas;
     private RecyclerView recycler;
@@ -99,7 +99,7 @@ public class PuntoVenta extends AppCompatActivity {
                 codigo = txtCodigo.getText().toString();
 
                 if(codigo.isEmpty()){
-                    IntentIntegrator integrator = new IntentIntegrator(PuntoVenta.this);
+                    IntentIntegrator integrator = new IntentIntegrator(PuntoVenta_user.this);
                     //A nuestro botón le agregamos el método de scanner deseado.
                     integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
                     integrator.setPrompt("Lector - CDP Abarrotes villa");
@@ -300,7 +300,7 @@ public class PuntoVenta extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else if(item_seleccionado == R.id.opNuevaVenta){
-            Intent intent = new Intent(getApplicationContext(), PuntoVenta.class);
+            Intent intent = new Intent(getApplicationContext(), PuntoVenta_user.class);
             startActivity(intent);
             finish();
         }
@@ -361,45 +361,13 @@ public class PuntoVenta extends AppCompatActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID);
         builder.setSmallIcon(R.drawable.logo_villa);
         builder.setContentTitle("Advertencia de la cantidad de productos!");
-        builder.setContentText("");
+        builder.setContentText("")
     } */
-
-    //Método para insertar los productos vendidos a la tabla de ventas.
-    /*private void registrar(String URL){
-        StringRequest stringrequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                limpiar();
-                Toast.makeText(getApplicationContext(), "Registro Exitoso!", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                limpiar();
-                Toast.makeText(getApplicationContext(), "Servidor fuera de servicio", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("producto", tvProducto.getText().toString());
-                parametros.put("precio", tvPrecio.getText().toString());
-                parametros.put("cantidad", txtCantidad.getText().toString());
-                parametros.put("subtotal", subtotal);
-                return parametros;
-            }
-        };
-
-        RequestQueue requestqueue = Volley.newRequestQueue(this);
-        //Ayuda a procesar las peticiones hechas de nuestra app.
-        requestqueue.add(stringrequest);
-    }// FIN DEL METODO REGISTRAR. */
-
 
     //Método para el botón regresar.
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
+        Intent intent = new Intent(getApplicationContext(), MenuPrincipalTipoUser.class);
         startActivity(intent);
         finish();
     }

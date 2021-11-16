@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 public class MenuPrincipal extends AppCompatActivity {
     //Declaramos nuestros atributos
-    private ImageButton btnAlmacen, btnVenta, btnControlUsuarios;
+    private ImageButton btnAlmacen, btnVenta, btnControlUsuarios, btnProveedores;
     String nombreUsuario;
 
     @Override
@@ -28,7 +28,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btnAlmacen = findViewById(R.id.btnAlmacen);
         btnVenta = findViewById(R.id.btnVenta);
         btnControlUsuarios = findViewById(R.id.btnControlUsuarios);
-
+        btnProveedores = findViewById(R.id.btnProveedores);
         nombreUsuario = getIntent().getStringExtra("usuario");
 
         //Métodos de acciones de los botones.
@@ -54,6 +54,15 @@ public class MenuPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ControlUsuario.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnProveedores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AgendaProveedores.class);
                 startActivity(intent);
                 finish();
             }

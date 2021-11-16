@@ -117,7 +117,7 @@ public class ProductosActivity extends AppCompatActivity {
                 //No permitas que mande campos vacíos a nuestra base de datos.
                 if(!codigo.isEmpty() && !producto.isEmpty() && !descripcion.isEmpty() && !cantidad.isEmpty() && !cantidadReserva.isEmpty()
                 && !precioCompra.isEmpty() && !precioVenta.isEmpty()){
-                    registrarProducto("http://192.168.1.70/AbarrotesVilla/registroProd_service.php");
+                    registrarProducto("https://appabarrotesvilla.000webhostapp.com/registroProd_service.php");
                 } else {
                     Toast.makeText(ProductosActivity.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }
@@ -221,7 +221,7 @@ public class ProductosActivity extends AppCompatActivity {
     //Método para mostrar los datos.
     private void consultarProducto(){
         //Variable donde esta nuestra URL del service asignandole el codigo a buscar.
-        String URL = "http://192.168.1.70/AbarrotesVilla/consultarProd_service.php?codigo=" + txtCodigo.getText().toString();
+        String URL = "https://appabarrotesvilla.000webhostapp.com/consultarProd_service.php?codigo=" + txtCodigo.getText().toString();
         //
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
@@ -268,7 +268,7 @@ public class ProductosActivity extends AppCompatActivity {
     //Método para hacer la modificación de nuestros productos.
     private void modificarProducto(){
         //Cadena de texto que se manda nuestro URL de servicio modificar.
-        String URL = "http://192.168.1.70/AbarrotesVilla/modifProd_service.php?";
+        String URL = "https://appabarrotesvilla.000webhostapp.com/modifProd_service.php?";
 
         StringRequest stringrequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -325,7 +325,7 @@ public class ProductosActivity extends AppCompatActivity {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void eliminarProducto(){
-        String URL = "http://192.168.1.70/AbarrotesVilla/eliminarProd_service.php?codigo=" + txtCodigo.getText().toString();
+        String URL = "https://appabarrotesvilla.000webhostapp.com/eliminarProd_service.php?codigo=" + txtCodigo.getText().toString();
 
         StringRequest stringrequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override

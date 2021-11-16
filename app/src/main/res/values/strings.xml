@@ -60,4 +60,18 @@
     <string name="str_Guardar">Guardar</string>
     <string name="str_id">Id</string>
 
+    <!--Strings para la activity proveedores-->
+    <string name="str_proveedor">Selecciona el Proveedor</string>
+    <string name="str_mensaje">Escriba el mensaje...</string>
+    <string name="str_enviar">Enviar</string>
+
+    <!-- Strings para la activity crud proveedores -->
+    <string name="str_idProveedor">ID</string>
+    <string name="str_nombreProveedor">Nombre del proveedor</string>
+    <string name="str_telProveedor">Telefono del proveedor</string>
+
+    <!--Strings para el menú overflow_proveedores de nuestra action bar.-->
+    <string name="str_opContacto">Contactos</string>
+    <string name="str_opRegitrar">Registrar Contacto</string>
+
 </resources>
