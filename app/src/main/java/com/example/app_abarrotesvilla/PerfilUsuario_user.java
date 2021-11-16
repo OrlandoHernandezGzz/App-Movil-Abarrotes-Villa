@@ -1,7 +1,5 @@
 package com.example.app_abarrotesvilla;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,7 +27,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PerfilUsuario extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PerfilUsuario_user extends AppCompatActivity {
     //Declaramos nuestros atributos.
     private JsonObjectRequest jsonObjectRequest;
     private RequestQueue requestqueue;
@@ -55,12 +55,12 @@ public class PerfilUsuario extends AppCompatActivity {
         //Pasa el nombre del usuario que a ingresado.
         //nombreUsuario = getIntent().getStringExtra("usuario");
 
-        //Carga los datos del usuario que inicio sesion.
+        //LLama el método llamar perfil, para que establezca los datos del usuario.
         SharedPreferences preferences = getSharedPreferences("sesion",
                 Context.MODE_PRIVATE);
         nombreUsuario = preferences.getString("user", "No existe el usuario");
 
-        //LLama el método llamar perfil, para que establezca los datos del usuario.
+        //Carga los datos del usuario que inicio sesion.
         llamarPerfil();
 
         //Desactivamos nuestras cajas de texto para que no podamos modificarlas.
@@ -191,7 +191,7 @@ public class PerfilUsuario extends AppCompatActivity {
     //Método para el botón regresar.
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
+        Intent intent = new Intent(getApplicationContext(), MenuPrincipalTipoUser.class);
         startActivity(intent);
         finish();
     }

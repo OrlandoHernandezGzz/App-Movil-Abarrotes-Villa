@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/logo_villa" />
 
     <ImageButton
-        android:id="@+id/btnVenta"
+        android:id="@+id/btnVentaUs"
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuPrincipalTipoUser extends AppCompatActivity {
     //Declaramos nuestros atributos
-    private ImageButton btnVenta;
+    private ImageButton btnVentaUs;
     String nombreUsuario;
 
     @Override
@@ -25,15 +25,15 @@ public class MenuPrincipalTipoUser extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         //Puente de nuestros atributos a los componentes del xml.
-        btnVenta = findViewById(R.id.btnVenta);
+        btnVentaUs = findViewById(R.id.btnVentaUs);
 
-        nombreUsuario = getIntent().getStringExtra("usuario");
+        //nombreUsuario = getIntent().getStringExtra("usuario");
 
         //Métodos de acciones de los botones.
-        btnVenta.setOnClickListener(new View.OnClickListener() {
+        btnVentaUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PuntoVenta.class);
+                Intent intent = new Intent(getApplicationContext(), PuntoVenta_user.class);
                 startActivity(intent);
                 finish();
             }
@@ -43,7 +43,7 @@ public class MenuPrincipalTipoUser extends AppCompatActivity {
 
     //Método para crear la opción del menú.
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.overflow, menu);
+        getMenuInflater().inflate(R.menu.overflowtipous, menu);
         return true;
     }
 
@@ -52,8 +52,8 @@ public class MenuPrincipalTipoUser extends AppCompatActivity {
         int item_seleccionado = item.getItemId();
 
         if(item_seleccionado == R.id.opPerfil) {
-            Intent intent = new Intent(getApplicationContext(), PerfilUsuario.class);
-            intent.putExtra("usuario", nombreUsuario);
+            Intent intent = new Intent(getApplicationContext(), PerfilUsuario_user.class);
+            //intent.putExtra("usuario", nombreUsuario);
             startActivity(intent);
             finish();
         } else if(item_seleccionado == R.id.opCerrar){

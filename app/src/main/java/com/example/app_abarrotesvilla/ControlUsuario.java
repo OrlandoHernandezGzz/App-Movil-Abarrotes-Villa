@@ -117,7 +117,7 @@ public class ControlUsuario extends AppCompatActivity {
     //Método para buscar un usuario.
     private void buscarUsuario(){
         //Variable donde esta nuestra URL del service asignandole el codigo a buscar.
-        String URL = "http://192.168.1.73/AbarrotesVilla/consultarUser_service.php?codigo=" + txtCodigoUser.getText().toString();
+        String URL = "https://appabarrotesvilla.000webhostapp.com/consultarUser_service.php?codigo=" + txtCodigoUser.getText().toString();
         //
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
@@ -160,7 +160,7 @@ public class ControlUsuario extends AppCompatActivity {
     //Método para modificar un usuario.
     private void modificarUsuario(){
         //Cadena de texto que se manda nuestro URL de servicio modificar.
-        String URL = "http://192.168.1.73/AbarrotesVilla/modifUser_service.php?";
+        String URL = "https://appabarrotesvilla.000webhostapp.com/modifUser_service.php?";
 
         StringRequest stringrequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -201,7 +201,7 @@ public class ControlUsuario extends AppCompatActivity {
 
     //Método para dar de baja un usuario.
     private void eliminarUsuario(){
-        String URL = "http://192.168.1.73/AbarrotesVilla/eliminarUser_service.php?codigo=" + txtCodigoUser.getText().toString();
+        String URL = "https://appabarrotesvilla.000webhostapp.com/eliminarUser_service.php?codigo=" + txtCodigoUser.getText().toString();
 
         StringRequest stringrequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override

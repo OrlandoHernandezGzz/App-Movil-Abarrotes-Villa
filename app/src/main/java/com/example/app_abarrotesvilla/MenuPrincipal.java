@@ -62,7 +62,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btnProveedores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Proveedores.class);
+                Intent intent = new Intent(getApplicationContext(), AgendaProveedores.class);
                 startActivity(intent);
                 finish();
             }

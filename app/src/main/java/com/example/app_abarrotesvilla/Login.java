@@ -3,7 +3,9 @@ package com.example.app_abarrotesvilla;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -58,7 +60,7 @@ public class Login extends AppCompatActivity {
                 password = txtPassword.getText().toString();
 
                 if(!usuario.isEmpty() && !password.isEmpty()){
-                    login_service("http://192.168.1.73/AbarrotesVilla/login_service.php");
+                    login_service("https://appabarrotesvilla.000webhostapp.com/login_service.php");
                 } else{
                     Toast.makeText(Login.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }
@@ -93,12 +95,14 @@ public class Login extends AppCompatActivity {
 
                         if(tipoUsuario.equalsIgnoreCase("Administrador")){
                             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
-                            intent.putExtra("usuario", usuario);
+                            //intent.putExtra("usuario", usuario);
+                            sesionUsuario();
                             startActivity(intent);
                             finish();
                         } else{
                             Intent intent = new Intent(getApplicationContext(), MenuPrincipalTipoUser.class);
-                            intent.putExtra("usuario", usuario);
+                            //intent.putExtra("usuario", usuario);
+                            sesionUsuario();
                             startActivity(intent);
                             finish();
                         }
@@ -156,7 +160,7 @@ public class Login extends AppCompatActivity {
                 passwordEm = txtPasswordEm.getText().toString();
 
                 if(!usuarioEm.isEmpty() && !passwordEm.isEmpty()){
-                    login_serviceEmergente("http://192.168.1.73/AbarrotesVilla/login_service.php");
+                    login_serviceEmergente("https://appabarrotesvilla.000webhostapp.com/login_service.php");
                 } else{
                     Toast.makeText(Login.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }
@@ -219,6 +223,16 @@ public class Login extends AppCompatActivity {
         requestqueue.add(stringrequest);
 
     } //FIN DEL METODO VALIDAR USUARIO.
+
+    //Metodo para guardar la sesion del usuario.
+    public void sesionUsuario(){
+        SharedPreferences preferences = getSharedPreferences("sesion",
+                Context.MODE_PRIVATE);
+        String userSesion = txtUsuario.getText().toString();
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("user", userSesion);
+        editor.apply();
+    }
 
     //Método para el botón regresar.
     @Override
