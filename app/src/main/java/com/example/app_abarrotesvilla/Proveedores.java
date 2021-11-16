@@ -86,7 +86,7 @@ public class Proveedores extends AppCompatActivity {
 
                 //No permitas que mande campos vacíos a nuestra base de datos.
                 if(!nombreProveedor.isEmpty() && !telProveedor.isEmpty()){
-                    registrarProveedor("http://192.168.1.78/AbarrotesVilla/registroProveedor_service.php");
+                    registrarProveedor("https://appabarrotesvilla.000webhostapp.com/registroProveedor_service.php");
                 } else {
                     Toast.makeText(Proveedores.this, "No se permiten campos vacíos.", Toast.LENGTH_SHORT).show();
                 }
@@ -129,7 +129,7 @@ public class Proveedores extends AppCompatActivity {
     //Método para mostrar los datos.
     private void consultarProveedor(){
         //Variable donde esta nuestra URL del service asignandole el codigo a buscar.
-        String URL = "http://192.168.1.78/AbarrotesVilla/consultarIdProveedor_service.php?id_proveedor=" + txtIdProveedor.getText().toString();
+        String URL = "https://appabarrotesvilla.000webhostapp.com/consultarIdProveedor_service.php?id_proveedor=" + txtIdProveedor.getText().toString();
         //
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
@@ -203,7 +203,7 @@ public class Proveedores extends AppCompatActivity {
     private void modificarProveedor(){
 
         //Cadena de texto que se manda nuestro URL de servicio modificar.
-        String URL = "http://192.168.1.78/AbarrotesVilla/modifProveedor_service.php";
+        String URL = "https://appabarrotesvilla.000webhostapp.com/modifProveedor_service.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -253,7 +253,7 @@ public class Proveedores extends AppCompatActivity {
 
     //Método eliminar.
     private void eliminarProveedor(){
-        String URL = "http://192.168.1.78/AbarrotesVilla/eliminarProveedor_service.php?idProveedor=" + txtIdProveedor.getText().toString();
+        String URL = "https://appabarrotesvilla.000webhostapp.com/eliminarProveedor_service.php?idProveedor=" + txtIdProveedor.getText().toString();
 
         StringRequest stringrequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override

@@ -76,7 +76,7 @@ public class AgendaProveedores extends AppCompatActivity {
 
     //Método para cargar los proveedores
     private void cargarProveedores() {
-        String URL = "http://192.168.1.78/AbarrotesVilla/consultarProveedor_service.php";
+        String URL = "https://appabarrotesvilla.000webhostapp.com/consultarProveedor_service.php";
         JsonObjectRequest requestObject = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
